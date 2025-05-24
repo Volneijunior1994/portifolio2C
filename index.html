@@ -6,27 +6,50 @@
     <title>Volnei Fernandes - Professor de Matemática, Educação Financeira e Programação</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { padding-top: 56px; } /* Ajuste para a navbar fixa */
+        body { padding-top: 56px; }
         .section-padding { padding: 60px 0; }
         .bg-light-gray { background-color: #f8f9fa; }
         .profile-img {
             max-width: 200px;
             border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 5px solid #fff; /* Borda branca na foto de perfil */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Sombra um pouco mais suave */
         }
         .card-custom {
-            transition: transform .2s; /* Efeito de hover */
+            transition: transform .2s;
         }
         .card-custom:hover {
-            transform: scale(1.05); /* Aumenta o card no hover */
+            transform: scale(1.05);
         }
         .icon-lg { font-size: 3rem; }
-        .jumbotron {
-    background-image: url('./caleb-white-PLfzwAmflos-unsplash.jpg');
-    background-size: cover;
-    background-position: center;
-}
+
+        /* Estilos para o Jumbotron (Header com imagem de fundo) */
+        .jumbotron.hero-section { /* Adicionamos uma classe mais específica ou usamos .jumbotron direto */
+            background-image: url('./caleb-white-PLfzwAmflos-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white; /* Garantir que o texto padrão seja branco */
+            position: relative; /* Necessário para o posicionamento do overlay */
+            z-index: 0; /* Contexto de empilhamento base */
+        }
+
+        .jumbotron.hero-section::before {
+            content: ""; /* Essencial para o pseudo-elemento aparecer */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay preto com 50% de opacidade. AJUSTE AQUI! */
+            z-index: 1; /* Overlay fica acima da imagem de fundo */
+        }
+
+        .hero-content {
+            position: relative; /* Para garantir que o conteúdo fique acima do overlay */
+            z-index: 2; /* Conteúdo fica acima do overlay */
+            padding-top: 3rem; /* Ajuste o padding conforme necessário */
+            padding-bottom: 3rem; /* Ajuste o padding conforme necessário */
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
